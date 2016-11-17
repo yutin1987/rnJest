@@ -1,0 +1,3 @@
+expect default {
+  find: async () => ([]),
+}
