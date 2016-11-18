@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { find } from './Data';
+import Data from './Data';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
 export default class Mock extends Component {
 
-  static state = {
+  state = {
     data: null
   }
 
@@ -33,15 +33,22 @@ export default class Mock extends Component {
   }
 
   findData = async () => {
-    const data = await find();
+    console.log('watting');
+    const data = await Data.find();
+    console.log('data1', data);
+
+    // console.log('data2', await Data.find());
+
     this.setState({ data });
   }
 
   render() {
+    const { data } = this.state;
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          {this.state.data}
+          {data && data[0].name}
         </Text>
       </View>
     );

@@ -25,11 +25,28 @@ const styles = StyleSheet.create({
 });
 
 export default class Intro extends Component {
+
+  state = {
+    value: '',
+  }
+
+  static defaultProps = {
+  }
+
+  onEnter = () => {
+    console.log('mouse enter');
+    this.setState({ value: 'XYZ111' });
+  }
+
   render() {
+    const { value } = this.state;
+
+    console.log(value);
+
     return (
-      <View style={styles.container}>
+      <View style={styles.container} onEnter={this.onEnter}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          {`Welcome to React Native! ${value}`}
         </Text>
         <Text style={styles.instructions}>
           This is a React Native snapshot test.

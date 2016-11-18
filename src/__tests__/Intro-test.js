@@ -6,8 +6,15 @@ import Intro from '../Intro';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  const tree = renderer.create(
+  const component = renderer.create(
     <Intro />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+
+  const tree = component.toJSON();
+
+  expect(component.toJSON()).toMatchSnapshot();
+
+  tree.props.onEnter();
+
+  expect(component.toJSON()).toMatchSnapshot();
 });

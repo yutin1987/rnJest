@@ -1,3 +1,3 @@
-expect default {
-  find: jest.fn(),
+export default {
+  find: jest.fn(() => ([{ name: '111' }])),
 }

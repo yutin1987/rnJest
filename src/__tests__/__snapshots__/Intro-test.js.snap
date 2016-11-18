@@ -1,5 +1,6 @@
 exports[`test renders correctly 1`] = `
 <View
+  onEnter={[Function]}
   style={
     Object {
       "alignItems": "center",
@@ -19,7 +20,47 @@ exports[`test renders correctly 1`] = `
         "textAlign": "center",
       }
     }>
-    Welcome to React Native!
+    Welcome to React Native! 
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#333333",
+        "marginBottom": 5,
+        "textAlign": "center",
+      }
+    }>
+    This is a React Native snapshot test.
+  </Text>
+</View>
+`;
+
+exports[`test renders correctly 2`] = `
+<View
+  onEnter={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#F5FCFF",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 30,
+        "margin": 10,
+        "textAlign": "center",
+      }
+    }>
+    Welcome to React Native! XYZ111
   </Text>
   <Text
     accessible={true}
